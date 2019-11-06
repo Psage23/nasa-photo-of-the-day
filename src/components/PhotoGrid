@@ -1,0 +1,8 @@
+import React from "react"
+
+export default function PhotoGrid() {
+    useEffect(() => {
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=VvxYi49718Og9NoNdtvI3xrBx1bgHYhulAsLR3JB`)
+        
+    })
+}
