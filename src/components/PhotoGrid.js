@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios"
+import axios from "axios";
+import styled from 'styled-components';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 
 
 
@@ -18,11 +23,20 @@ export default function PhotoGrid() {
     },[])
 
     return (
-        <div className="container">
-            <img className="picture" alt="Space view of the day" src={data.url}></img>
-            <h2>Title: {data.title}</h2>
-            <p>Today's Date: {data.date}</p>
-            <p>Description: {data.explanation}</p>
-        </div>
+        // <div className="container">
+        //     <img className="picture" alt="Space view of the day" src={data.url}></img>
+        //     <h2>Title: {data.title}</h2>
+        //     <p>Today's Date: {data.date}</p>
+        //     <p>Description: {data.explanation}</p>
+        // </div>
+        <Card>
+        <CardImg top width="100%" src={data.url} alt="Space view of the day" />
+        <CardBody>
+          <CardTitle>Title: {data.title}</CardTitle>
+          <CardSubtitle>Today's Date: {data.date}</CardSubtitle>
+          <CardText>Description: {data.explanation}</CardText>
+          <Button>Button</Button>
+        </CardBody>
+      </Card>
     )
 }
